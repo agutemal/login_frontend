@@ -1,14 +1,15 @@
 import { useState } from 'react'
+import { useLogin } from '../hooks/useLogin'
 import type { FormEvent } from 'react'
 
 const LoginPage = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  //const [email, setEmail] = useState('')
+  //const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-  }
+   const { email, setEmail, password, setPassword, error, isLoading, handleSubmit } = useLogin();
+
+
 
   return (
     <main className="min-h-screen bg-[#f5f9fc] px-5 py-6 sm:px-8 lg:px-12">

@@ -4,8 +4,8 @@ import type { LoginRequest, LoginResponse,RegisterRequest  } from '../types/mode
 
 export const authService = {
   login: (credentials: LoginRequest) =>
-    httpClient.post<LoginResponse>('/api/auth/login', credentials),
+    httpClient.post<LoginResponse>('login', credentials),
 
   register: (data: RegisterRequest) =>
-    httpClient.post<void>('/api/auth/register', data),
+    httpClient.post<void>('register', data),
 };
